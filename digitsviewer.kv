@@ -1,0 +1,86 @@
+#: kivy 1.10.0
+
+BoxLayout:
+  orientation:  'horizontal'
+  spacing:      20
+
+  Widget:
+    id:           canvas_digits
+    size_hint_x:  2.0
+
+  GridLayout:
+    id:           grid_all_info
+    size_hint_x:  1.0
+    cols:         1
+    spacing:      10
+
+    Label:
+      id:           info_sample
+      size_hint_y:  1.0
+      text:         'Total Sample: 0'
+      text_size:    self.size
+      valign:       'middle'
+    Label:
+      id:           info_judged
+      size_hint_y:  1.0
+      text:         'Total Judged: 0'
+      text_size:    self.size
+      valign:       'middle'
+    Label:
+      id:           info_completion
+      size_hint_y:  1.0
+      text:         'Completion Rate: 0.00%'
+      text_size:    self.size
+      valign:       'middle'
+    Label:
+      id:           info_precision
+      size_hint_y:  1.0
+      text:         'Precision: 0.00%'
+      text_size:    self.size
+      valign:       'middle'
+    Label:
+      id:           info_cur_sample
+      size_hint_y:  1.0
+      text:         'Current Sample ID: -1'
+      text_size:    self.size
+      valign:       'middle'
+    Label:
+      id:           info_cur_expect
+      size_hint_y:  1.0
+      text:         'Expect Result: -1'
+      text_size:    self.size
+      valign:       'middle'
+    Label:
+      id:           info_cur_judged
+      size_hint_y:  1.0
+      text:         'Judged Result: -1'
+      text_size:    self.size
+      valign:       'middle'
+    GridLayout:
+      id:           grid_control
+      size_hint_y:  1.6
+      cols:         3
+      spacing:      5
+
+      Label:
+        id:   info_id
+        text: 'Id:'
+      TextInput:
+        id:   input_id
+        text: '0'
+      Button:
+        id:       btn_go
+        text:     'Go!'
+        on_press: app.dealwith_go()
+      Button:
+        id:       btn_prev
+        text:     'Prev'
+        on_press: app.dealwith_prev()
+      Button:
+        id:       btn_next
+        text:     'Next'
+        on_press: app.dealwith_next()
+      Button:
+        id:       btn_clear
+        text:     'Clear'
+        on_press: app.clear_canvas()
